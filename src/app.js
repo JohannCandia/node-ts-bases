@@ -1,5 +1,4 @@
 const { getAge, getUUID } = require('./plugins');
-
 // const { emailTemplate } = require('./js-foundation/01-template');
 // require('./js-foundation/02-destructuring');
 // const { getUserById } = require('./js-foundation/03-callbacks');
@@ -8,10 +7,10 @@ const { getAge, getUUID } = require('./plugins');
 const getPokemonById = require('./js-foundation/06-promises');
 
 
-getPokemonById(4)
-  .then( ( pokemon ) => console.log({ pokemon }) )
-  .catch( ( err ) => console.log( err ) )
-  .finally( () => console.log('Finalmente') );
+// getPokemonById(14)
+//   .then( ( pokemon ) => console.log({ pokemon }) )
+//   .catch( ( err ) => console.log( err ) )
+//   .finally( () => console.log('Finalmente') );
 
 
 
@@ -29,7 +28,9 @@ getPokemonById(4)
 // console.log({ john });
 
 
+const {buildLogger} = require('./plugins/')
 
-
-
+const logger = buildLogger('app.js');
+logger.log('Hola desde app.js');
+logger.error('Error desde app.js');
 
